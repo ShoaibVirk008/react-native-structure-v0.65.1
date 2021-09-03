@@ -746,6 +746,13 @@
     "exec-sh" "^0.3.2"
     "minimist" "^1.2.0"
 
+"@codler/react-native-keyboard-aware-scroll-view@^2.0.0":
+  "integrity" "sha512-L2ipn4Gb1ZgytXk2uNbCnTXZfEl2duFewQGj75GKdNtwFrqEF6PkjZ6NPDOt3bnHd5Qvh+8Wi8P/BOKus+04gA=="
+  "resolved" "https://registry.npmjs.org/@codler/react-native-keyboard-aware-scroll-view/-/react-native-keyboard-aware-scroll-view-2.0.0.tgz"
+  "version" "2.0.0"
+  dependencies:
+    "react-native-iphone-x-helper" "^1.0.3"
+
 "@egjs/hammerjs@^2.0.17":
   "integrity" "sha512-XQsZgjm2EcVUiZQf11UBJQfmZeEmOW8DpI1gsFeln6w0ae0ii4dMQEQ0kjl6DspdWX1aGY1/loyXnP0JS06e/A=="
   "resolved" "https://registry.npmjs.org/@egjs/hammerjs/-/hammerjs-2.0.17.tgz"
@@ -5658,7 +5665,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>=0.42.0", "react-native@>=0.47.0", "react-native@>=0.48.4", "react-native@>=0.57", "react-native@>=0.65.0", "react-native@>=0.65.0-rc.0 || 0.0.0-*", "react-native@0.65.1":
+"react-native@*", "react-native@>=0.42.0", "react-native@>=0.47.0", "react-native@>=0.48.4", "react-native@>=0.57", "react-native@>=0.65.0", "react-native@>=0.65.0-rc.0 || 0.0.0-*", "react-native@>=0.65.1", "react-native@0.65.1":
   "integrity" "sha512-0UOVSnlssweQZjuaUtzViCifE/4tXm8oRbxwakopc8GavPu9vLulde145GOw6QVYiOy4iL50f+2XXRdX9NmMeQ=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.65.1.tgz"
   "version" "0.65.1"

@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, Scr
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors } from '../../services';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from '@codler/react-native-keyboard-aware-scroll-view'
 
 
 export const KeyboardAvoidingScrollView = ({children, style, animation }) => {

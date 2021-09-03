@@ -53,7 +53,7 @@ export const PickerPrimary = ({
                         itemKey={itemKey}
                         items={data}
                         placeholder={placeholderObject}
-                        useNativeAndroidPickerStyle={true}
+                       useNativeAndroidPickerStyle={false}
                         pickerProps={{ mode: 'dropdown' }}
                         style={{
                             ...PickerPrimaryStyles,
@@ -110,7 +110,8 @@ const PickerPrimaryStyles = StyleSheet.create({
         //paddingRight: 30, // to ensure the text is never behind the icon
     },
     inputAndroid: {
-        fontSize: fontSize.regular,
+         fontSize: fontSize.medium,
+        fontFamily: fontFamily.appTextMedium,
         // paddingHorizontal: width(5),
         //paddingVertical: height(2),
         height: height(8),

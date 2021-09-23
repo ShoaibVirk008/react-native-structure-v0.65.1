@@ -4,12 +4,9 @@ import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, fontSize, fontFamily, sizes, appIcons, appStyles } from '../../services';
 import RNPickerSelect from 'react-native-picker-select'
-import { AbsoluteWrapper, Wrapper, ComponentWrapper, RowWrapper } from '../wrappers';
-import { SmallText, InputTitle, MediumText, RegularText } from '../texts';
-import { CustomIcon, IconWithText } from '../icons';
-import { Spacer } from '../spacers';
+import { Icons, Spacers, Texts, Wrappers } from '..';
 
-export const PickerPrimary = ({
+export const Primary = ({
     onDonePress, containerStyle, data, title, onChange,
     placeholder, error, value, itemKey,
     left, customIconLeft, iconSizeLeft, iconColorLeft, iconStyleLeft, iconNameLeft
@@ -18,11 +15,11 @@ export const PickerPrimary = ({
         label: placeholder, value: 'placeholder', color: '#909090',
     }
     return (
-        <Wrapper>
-            <ComponentWrapper>
-                <InputTitle>{title}</InputTitle>
-            </ComponentWrapper>
-            <Spacer height={sizes.TinyMargin} />
+        <Wrappers.Primary>
+            <Wrappers.Component>
+                <Texts.Input>{title}</Texts.Input>
+            </Wrappers.Component>
+            <Spacers.Base/>
             <View style={[appStyles.inputContainerColored, {
                 borderRadius: 2,
                 backgroundColor: colors.appBgColor2,
@@ -35,7 +32,7 @@ export const PickerPrimary = ({
                         :
                         customIconLeft ?
                             <View style={{ flex: 1, alignItems: 'flex-end' }}>
-                                <CustomIcon icon={customIconLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor3} containerStyle={iconStyleLeft} />
+                                <Icons.Custom icon={customIconLeft} size={iconSizeLeft ? iconSizeLeft : sizes.icons.medium} color={iconColorLeft ? iconColorLeft : colors.appTextColor3} containerStyle={iconStyleLeft} />
                             </View>
                             :
                             iconNameLeft ?
@@ -45,7 +42,7 @@ export const PickerPrimary = ({
                                 :
                                 null
                 }
-                <Wrapper flex={8}>
+                <Wrappers.Primary flex={8}>
                     <RNPickerSelect
                         onDonePress={onDonePress}
                         onValueChange={onChange}
@@ -53,7 +50,7 @@ export const PickerPrimary = ({
                         itemKey={itemKey}
                         items={data}
                         placeholder={placeholderObject}
-                       useNativeAndroidPickerStyle={false}
+                        useNativeAndroidPickerStyle={false}
                         pickerProps={{ mode: 'dropdown' }}
                         style={{
                             ...PickerPrimaryStyles,
@@ -64,22 +61,22 @@ export const PickerPrimary = ({
                         }}
                         Icon={() =>
                             //<Icon name="ios-chevron-down" type="ionicon" size={totalSize(2.5)} color={colors.appTextColor3} />
-                            <CustomIcon
+                            <Icons.Custom
                                 icon={appIcons.dropdown_normal}
                                 size={totalSize(2)}
                             />
                         }
                     />
-                </Wrapper>
+                </Wrappers.Primary>
             </View>
             {
                 error ?
-                    // <AbsoluteWrapper animation="shake" style={{ bottom: 0, right: sizes.marginHorizontal, left: 0, }}>
+                    // <Absolute animation="shake" style={{ bottom: 0, right: sizes.marginHorizontal, left: 0, }}>
                     //     <SmallText style={[{ color: colors.error, textAlign: 'right' }]}>{error}</SmallText>
-                    // </AbsoluteWrapper>
-                    <ComponentWrapper style={{}} animation="shake">
-                        <Spacer height={sizes.TinyMargin} />
-                        <IconWithText
+                    // </Absolute>
+                    <Wrappers.Component style={{}} animation="shake">
+                         <Spacers.Tiny/>
+                        <Icons.WithText
                             iconName="alert-circle-outline"
                             //title="New"
                             text={error}
@@ -87,11 +84,11 @@ export const PickerPrimary = ({
                             iconSize={sizes.icons.small}
                             textStyle={[{ fontSize: fontSize.small }]}
                         />
-                    </ComponentWrapper>
+                    </Wrappers.Component>
                     :
                     null
             }
-        </Wrapper>
+        </Wrappers.Primary>
     );
 }
 
@@ -100,7 +97,7 @@ const PickerPrimaryStyles = StyleSheet.create({
         fontSize: fontSize.medium,
         fontFamily: fontFamily.appTextMedium,
         //paddingVertical: height(2),
-        height: height(7),
+        height: height(8),
         // paddingHorizontal: width(5),
         marginHorizontal: width(5),
         //borderWidth: 1,
@@ -110,7 +107,7 @@ const PickerPrimaryStyles = StyleSheet.create({
         //paddingRight: 30, // to ensure the text is never behind the icon
     },
     inputAndroid: {
-         fontSize: fontSize.medium,
+        fontSize: fontSize.medium,
         fontFamily: fontFamily.appTextMedium,
         // paddingHorizontal: width(5),
         //paddingVertical: height(2),

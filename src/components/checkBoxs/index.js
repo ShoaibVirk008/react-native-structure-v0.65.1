@@ -1,11 +1,9 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, ViewPropTypes } from 'react-native'
-import { Icon } from 'react-native-elements';
-import { height, totalSize, width } from 'react-native-dimension';
+import { View, Text, Image, StyleSheet, } from 'react-native'
 import { colors, sizes, appStyles } from '../../services';
-import { IconWithText } from '../icons';
+import { Icons } from '..';
 
-export const CheckBoxPrimary = ({textStyle, containerStyle, text, checked, onPress }) => {
+export const Primary = ({textStyle, containerStyle, text, checked, onPress }) => {
     const checkedIconName = 'checkbox-marked'
     const uncheckedIconName = 'checkbox-blank-outline'
     const checkboxIconType = 'material-community'
@@ -13,7 +11,7 @@ export const CheckBoxPrimary = ({textStyle, containerStyle, text, checked, onPre
     const checkIconColor = colors.appColor1
     const uncheckIconColor = colors.appTextColor5
     return (
-        <IconWithText
+        <Icons.WithText
             text={text}
             iconName={checked ? checkedIconName : uncheckedIconName}
             iconType={checkboxIconType}

@@ -7,9 +7,8 @@ function Splash () {
  
 
     return (
-      <Wrappers.MainWrapper style={[appStyles.center]}>
-        <Texts.XXLTitle>Splash</Texts.XXLTitle>
-      </Wrappers.MainWrapper>
+      <Wrappers.Main style={[appStyles.center]}>
+      </Wrappers.Main>
     );
 }
 

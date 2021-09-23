@@ -1,24 +1,22 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, fontSize, sizes } from '../../services';
-import { ButtonTextRegular, ButtonTextMedium } from '../texts';
-import { CustomIcon } from '../icons';
-import { Wrapper, RowWrapperBasic, RowWrapper, ComponentWrapper } from '../wrappers';
+import { Icons,Wrappers ,Texts} from '..';
 
-export const ButtonColored = ({
+export const Colored = ({
     text, isLoading, activityColor, animation, onPress, disabled, buttonStyle,
     customIcon, textStyle, iconName, iconType, iconSize, buttonColor, iconStyle,
     tintColor, direction
 }) => {
     return (
         <TouchableOpacity onPress={onPress} disabled={isLoading ? true : disabled}>
-            <Wrapper animation={animation} style={[appStyles.buttonColord, { borderRadius: sizes.buttonRadius, height: height(7), backgroundColor: disabled ? colors.appColor1 + '80' : buttonColor ? buttonColor : colors.appColor1 }, buttonStyle]}>
+            <Wrappers.Primary animation={animation} style={[appStyles.buttonColord, { borderRadius: sizes.buttonRadius, height: height(7), backgroundColor: disabled ? colors.appColor1 + '80' : buttonColor ? buttonColor : colors.appColor1 }, buttonStyle]}>
                 <View style={{ flexDirection: direction ? direction : 'row', alignItems: 'center' }}>
                     {
                         customIcon ?
-                            <CustomIcon
+                            <Icons.Custom
                                 icon={customIcon}
                                 size={iconSize ? iconSize : totalSize(3)}
                                 color={tintColor && tintColor}
@@ -42,21 +40,21 @@ export const ButtonColored = ({
                                 size={"small"}
                             />
                             :
-                            <ButtonTextMedium style={[{ color: tintColor ? tintColor : colors.appTextColor6, }, textStyle]}>{text}</ButtonTextMedium>
+                            <Texts.ButtonMedium style={[{ color: tintColor ? tintColor : colors.appTextColor6, }, textStyle]}>{text}</Texts.ButtonMedium>
                     }
                 </View>
-            </Wrapper>
+            </Wrappers.Primary>
         </TouchableOpacity>
     );
 }
 
-export const ButtonColoredSmall = ({text, onPress, buttonStyle, customIcon, direction, textStyle, iconName, iconType, iconSize, iconColor, iconStyle}) => {
+export const ColoredSmall = ({text, onPress, buttonStyle, customIcon, direction, textStyle, iconName, iconType, iconSize, iconColor, iconStyle}) => {
     return (
         <TouchableOpacity onPress={onPress} style={[{ borderRadius: 15, paddingHorizontal: width(5), paddingVertical: height(1), backgroundColor: colors.appColor1 }, buttonStyle]}>
             <View style={{ flexDirection: direction ? direction : 'row', alignItems: 'center' }}>
                 {
                     customIcon ?
-                        <CustomIcon
+                        <Icons.Custom
                             icon={customIcon}
                             size={iconSize ? iconSize : totalSize(2)}
                             color={iconColor ? iconColor : colors.appTextColor6}
@@ -73,19 +71,19 @@ export const ButtonColoredSmall = ({text, onPress, buttonStyle, customIcon, dire
                             :
                             null
                 }
-                <ButtonTextRegular style={[{ color: colors.appTextColor6, }, textStyle]}>  {text}  </ButtonTextRegular>
+                <Texts.ButtonRegular style={[{ color: colors.appTextColor6, }, textStyle]}>  {text}  </Texts.ButtonRegular>
             </View>
         </TouchableOpacity>
     );
 }
 
-export const ButtonBordered = ({text, onPress, buttonStyle, textStyle, iconName, customIcon, iconType, iconSize, iconColor, iconStyle, tintColor}) => {
+export const Bordered = ({text, onPress, buttonStyle, textStyle, iconName, customIcon, iconType, iconSize, iconColor, iconStyle, tintColor}) => {
     return (
         <TouchableOpacity onPress={onPress} style={[appStyles.buttonBorderd, { borderRadius: sizes.buttonRadius, height: height(7), borderColor: tintColor ? tintColor : colors.appColor1 }, buttonStyle]}>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 {
                     customIcon ?
-                        <CustomIcon
+                        <Icons.Custom
                             icon={customIcon}
                             size={iconSize ? iconSize : totalSize(3)}
                             color={iconColor ? iconColor : null}
@@ -104,13 +102,13 @@ export const ButtonBordered = ({text, onPress, buttonStyle, textStyle, iconName,
                             :
                             null
                 }
-                <ButtonTextMedium style={[{ color: tintColor ? tintColor : colors.appColor1, }, textStyle]}>{text}</ButtonTextMedium>
+                <Texts.ButtonMedium style={[{ color: tintColor ? tintColor : colors.appColor1, }, textStyle]}>{text}</Texts.ButtonMedium>
             </View>
         </TouchableOpacity>
     );
 }
 
-export const ButtonBorderedSmall = ({ text, onPress, buttonStyle, rowReverse, textStyle, iconName, iconType, iconSize, iconColor, iconStyle, tintColor}) => {
+export const BorderedSmall = ({ text, onPress, buttonStyle, rowReverse, textStyle, iconName, iconType, iconSize, iconColor, iconStyle, tintColor}) => {
     return (
         <TouchableOpacity onPress={onPress} style={[{ borderRadius: 15, paddingHorizontal: width(5), paddingVertical: height(1), borderColor: tintColor ? tintColor : colors.appColor1, borderWidth: 1 }, buttonStyle]}>
             <View style={{ flexDirection: rowReverse ? 'row-reverse' : 'row', alignItems: 'center' }}>
@@ -126,29 +124,12 @@ export const ButtonBorderedSmall = ({ text, onPress, buttonStyle, rowReverse, te
                         :
                         null
                 }
-                <Text style={[appStyles.ButtonTextRegular, { color: tintColor ? tintColor : colors.appColor1, fontSize: fontSize.regular }, textStyle]}>{text}</Text>
+                <Text style={[appStyles.Texts.ButtonRegular, { color: tintColor ? tintColor : colors.appColor1, fontSize: fontSize.regular }, textStyle]}>{text}</Text>
             </View>
         </TouchableOpacity>
     );
 }
 
-export const ButtonArrowColored = ({text, onPress,animation, buttonStyle, textStyle, iconName, iconType, iconSize, buttonColor, iconStyle, tintColor}) => {
-    return (
-        <TouchableOpacity onPress={onPress}>
-            <ComponentWrapper animation={animation}  style={[{ borderRadius: sizes.buttonRadius, backgroundColor: buttonColor ? buttonColor : colors.appColor1, paddingVertical: height(1.25) }, appStyles.shadow, buttonStyle]}>
-                <RowWrapper>
-                    <ButtonTextMedium style={[{ color: tintColor ? tintColor : colors.appTextColor6, }, textStyle]}>{text}</ButtonTextMedium>
-                    <Icon
-                        name={iconName ? iconName : "chevron-right"}
-                        type={iconType ? iconType : "material-community"}
-                        size={iconSize ? iconSize : totalSize(5)}
-                        color={tintColor ? tintColor : colors.appTextColor6}
-                        iconStyle={[{}, iconStyle]}
-                    />
-                </RowWrapper>
-            </ComponentWrapper>
-        </TouchableOpacity>
-    );
-}
+
 
 

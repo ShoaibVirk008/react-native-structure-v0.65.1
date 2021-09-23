@@ -4,9 +4,9 @@ import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, sizes } from '../../services';
 import * as Animatable from 'react-native-animatable';
-import { SmallText } from '../texts';
+import { Texts } from '..';
 
-export const BackIcon = ({ style, onPress, size }) => {
+export const Back = ({ style, onPress, size }) => {
     return (
         <Icon
             name="ios-arrow-back"
@@ -21,7 +21,7 @@ export const BackIcon = ({ style, onPress, size }) => {
         />
     );
 }
-export const IconButton = ({ buttonStyle, onPress, shadow, shadowColored, iconSize, iconColor, iconName, iconType, buttonColor, buttonSize, customIcon, iconStyle, disabled }) => {
+export const Button = ({ buttonStyle, onPress, shadow, shadowColored, iconSize, iconColor, iconName, iconType, buttonColor, buttonSize, customIcon, iconStyle, disabled }) => {
     const defaultButtonsize = totalSize(5)
     return (
         <TouchableOpacity
@@ -41,7 +41,7 @@ export const IconButton = ({ buttonStyle, onPress, shadow, shadowColored, iconSi
         >
             {
                 customIcon ?
-                    <CustomIcon icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={iconColor } containerStyle={iconStyle} />
+                    <CustomIcon icon={customIcon} size={iconSize ? iconSize : totalSize(2)} color={iconColor} containerStyle={iconStyle} />
                     :
                     <Icon
                         name={iconName ? iconName : "heart"}
@@ -54,34 +54,23 @@ export const IconButton = ({ buttonStyle, onPress, shadow, shadowColored, iconSi
         </TouchableOpacity>
     );
 }
-export const CustomIcon = ({icon, size, animation, duration, color }) => {
+export const Custom = ({ icon, size, animation, duration, color, onPress }) => {
     const defaulSize = totalSize(5)
     return (
         <Animatable.View animation={animation} duration={duration}>
-            <Image
-                source={icon}
-                resizeMode="contain"
-                style={{ height: size ? size : defaulSize, width: size ? size : defaulSize, tintColor: color }}
-            />
+            <TouchableOpacity disabled={!onPress} onPress={onPress}>
+                <Image
+                    source={icon}
+                    resizeMode="contain"
+                    style={{ height: size ? size : defaulSize, width: size ? size : defaulSize, tintColor: color }}
+                />
+            </TouchableOpacity>
         </Animatable.View>
     );
 }
-export const TouchableCustomIcon = ({icon, size, animation, duration, color, onPress}) => {
-    const defaulSize = totalSize(5)
-    return (
-        <TouchableOpacity onPress={onPress}>
-            <CustomIcon
-                icon={icon}
-                size={size}
-                animation={animation}
-                duration={duration}
-                color={color}
-            />
-        </TouchableOpacity>
-    );
-}
 
-export const IconWithText = ({text, containerStyle, title, customIcon, onPress, tintColor, iconName, iconType, iconSize, textStyle, titleStyle, direction, iconStyle}) => {
+
+export const WithText = ({ text, containerStyle, title, customIcon, onPress, tintColor, iconName, iconType, iconSize, textStyle, titleStyle, direction, iconStyle }) => {
     return (
         <TouchableOpacity activeOpacity={1} onPress={onPress} style={[{ flexDirection: direction ? direction : 'row', alignItems: 'center', }, containerStyle]}>
             {
@@ -97,7 +86,7 @@ export const IconWithText = ({text, containerStyle, title, customIcon, onPress, 
                         :
                         null
                 }
-                <SmallText style={[{ color: tintColor ? tintColor : colors.appTextColor1, }, textStyle]}>{text}</SmallText>
+                <Texts.Small style={[{ color: tintColor ? tintColor : colors.appTextColor1, }, textStyle]}>{text}</Texts.Small>
             </View>
         </TouchableOpacity>
     );

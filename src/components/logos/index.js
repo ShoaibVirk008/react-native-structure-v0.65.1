@@ -5,11 +5,11 @@ import { height, totalSize, width } from 'react-native-dimension';
 import { colors, sizes, appStyles } from '../../services';
 import { IconWithText } from '../icons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
-import { RowWrapperBasic } from '../wrappers';
+import { RowBasic } from '../wrappers';
 import { TinyTitle } from '../texts';
 import { Spacer } from '../spacers';
 
-export const LogoMain = ({}) => {
+export const Primary = ({}) => {
   return (
     null
   );

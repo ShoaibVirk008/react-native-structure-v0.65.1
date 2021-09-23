@@ -280,12 +280,12 @@ export const appStyles= StyleSheet.create({
   fontMedium: {
     fontFamily: fontFamily.appTextMedium
   },
-  ButtonTextRegular: {
+  ButtonRegular: {
     fontSize: fontSize.regular,
      color: '#000000',
      fontFamily: fontFamily.appTextMedium
    },
-   ButtonTextMedium: {
+   ButtonMedium: {
      fontSize: fontSize.medium,
       color: '#000000',
       fontFamily: fontFamily.appTextMedium

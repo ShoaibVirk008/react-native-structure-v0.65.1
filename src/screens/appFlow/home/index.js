@@ -6,9 +6,8 @@ function Home() {
 
 
   return (
-    <Wrappers.MainWrapper>
-      <Texts.LargeTitle> Home </Texts.LargeTitle>
-    </Wrappers.MainWrapper>
+    <Wrappers.Main>
+    </Wrappers.Main>
   );
 }
 

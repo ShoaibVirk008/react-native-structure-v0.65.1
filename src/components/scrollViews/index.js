@@ -6,7 +6,7 @@ import { colors } from '../../services';
 import { KeyboardAwareScrollView } from '@codler/react-native-keyboard-aware-scroll-view'
 
 
-export const KeyboardAvoidingScrollView = ({children, style, animation }) => {
+export const KeyboardAvoiding = ({children, style, animation }) => {
     return (
         <KeyboardAwareScrollView showsVerticalScrollIndicator={false} keyboardShouldPersistTaps="always">
             {children}

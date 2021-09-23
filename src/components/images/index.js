@@ -3,12 +3,10 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, Vie
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, sizes, appStyles } from '../../services';
-import PropTypes from 'prop-types'
-import { Wrapper, AbsoluteWrapper } from '../wrappers';
-import { color } from 'react-native-reanimated';
+import { Wrappers } from '..';
 //import LinearGradient from 'react-native-linear-gradient';
 
-export const ImageRound = ({style, size, source}) => {
+export const Round = ({ style, size, source }) => {
     const defaultSize = totalSize(5)
     return (
         <Image
@@ -18,7 +16,7 @@ export const ImageRound = ({style, size, source}) => {
     );
 }
 
-export const ImageSqareRound = ({style, size, source }) => {
+export const SqareRound = ({ style, size, source }) => {
     const defaultSize = totalSize(5)
     return (
         <Image
@@ -28,56 +26,36 @@ export const ImageSqareRound = ({style, size, source }) => {
     );
 }
 
-export const ImageProfile = ({imageStyle, source, containerStyle,animation,onPress }) => {
+export const Profile = ({ imageStyle, source, containerStyle, animation, onPress }) => {
     return (
-       <TouchableOpacity activeOpacity={1} onPress={onPress}>
-            <Wrapper animation={animation?animation:'zoomIn'} style={[styles.ImageProfileContainer,containerStyle]}>
-            <Image
-                source={source}
-                style={[styles.ImageProfile, imageStyle]}
-            />
-        </Wrapper>
-       </TouchableOpacity>
+        <TouchableOpacity activeOpacity={1} onPress={onPress}>
+            <Wrappers.Primary animation={animation ? animation : 'zoomIn'} style={[styles.ImageProfileContainer, containerStyle]}>
+                <Image
+                    source={source}
+                    style={[styles.ImageProfile, imageStyle]}
+                />
+            </Wrappers.Primary>
+        </TouchableOpacity>
     );
 }
-export const ImageCollectionItem = ({imageStyle, source, containerStyle}) => {
-    return (
-        <Wrapper style={containerStyle}>
-            <Image
-                source={source}
-                style={[styles.ImageCollectionItem, imageStyle]}
-            />
-        </Wrapper>
-    );
-}
-export const ImageBackgroundTop = ({imageStyle, source, containerStyle}) => {
-    return (
-        <AbsoluteWrapper style={[containerStyle]}>
-        <Image
-          source={source}
-          style={[{ width: width(100), height: height(45) },imageStyle]}
-        />
-        <AbsoluteWrapper style={{ top: 0, right: 0, bottom: 0, left: 0, backgroundColor: colors.appBgColor5 + '40' }} />
-      </AbsoluteWrapper>
-    );
-}
+
 
 
 
 const styles = StyleSheet.create({
-    ImageProfileContainer:{
+    ImageProfileContainer: {
         ...appStyles.shadowColored,
-       // backgroundColor:'transparent',
+        // backgroundColor:'transparent',
         borderRadius: 100,
-        backgroundColor:colors.appBgColor1
+        backgroundColor: colors.appBgColor1
     },
     ImageProfile: {
-        width:totalSize(15),
-        height:totalSize(15),
+        width: totalSize(15),
+        height: totalSize(15),
         borderRadius: 100,
-        borderWidth:5,
-        borderColor:colors.appBgColor1,
-       
+        borderWidth: 5,
+        borderColor: colors.appBgColor1,
+
     },
     ImageProfileOverlay: {
         borderTopRightRadius: 25,

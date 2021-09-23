@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, Tex
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles } from '../../services';
-const TextInputColored = ({iconName, iconType, placeholder, onFocus, onBlur, onChangeText, secureTextEntry, value, containerStyle}) => {
+const Colored = ({iconName, iconType, placeholder, onFocus, onBlur, onChangeText, secureTextEntry, value, containerStyle}) => {
     return (
         <View style={[appStyles.inputContainerColored, {
             borderRadius: 10,
@@ -26,7 +26,7 @@ const TextInputColored = ({iconName, iconType, placeholder, onFocus, onBlur, onC
         </View>
     );
 }
-const TextInputBordered = ({iconName, iconType, placeholder, placeholderTextColor, onFocus, onChangeText, secureTextEntry, value, containerStyle, inputStyle}) => {
+const Bordered = ({iconName, iconType, placeholder, placeholderTextColor, onFocus, onChangeText, secureTextEntry, value, containerStyle, inputStyle}) => {
     return (
         <View style={[appStyles.inputContainerBorderd, {
             borderRadius: 5,
@@ -51,4 +51,4 @@ const TextInputBordered = ({iconName, iconType, placeholder, placeholderTextColo
     );
 }
 
-export { TextInputColored, TextInputBordered }
+export { Colored, Bordered }

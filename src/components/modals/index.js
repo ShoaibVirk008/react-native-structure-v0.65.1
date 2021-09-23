@@ -3,20 +3,14 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, Vie
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, sizes, appStyles } from '../../services';
-import { CardWrapper, RowWrapper, ComponentWrapper, Wrapper, AbsoluteWrapper } from '../wrappers';
-import { Spacer } from '../spacers';
-import { TinyTitle, RegularText } from '../texts';
-import { TextInputColored, TextInputBordered } from '../textInput';
+import { Absolute } from '../wrappers';
 import Modal from 'react-native-modal'
-import { CheckBoxPrimary } from '../checkBoxs';
-import { ButtonColored, ButtonGradiantColored, ButtonBordered } from '../buttons';
-import { SearchIcon, CloseIcon } from '../icons';
 import { styles } from './styles';
-import { LineHorizontal } from '../lines';
+import { Icons, Lines, Spacers, Texts, Wrappers } from '..';
 
 
 
-export const SwipableModal = ({ children, title, isVisible, toggleModal, footerFlex, headerFlex }) => {
+export const Swipable = ({ children, title, isVisible, toggleModal, footerFlex, headerFlex }) => {
     return (
         <Modal
             isVisible={isVisible}
@@ -26,64 +20,33 @@ export const SwipableModal = ({ children, title, isVisible, toggleModal, footerF
             // backdropOpacity={0}
             onBackdropPress={toggleModal}
         >
-            <Wrapper flex={1}>
-                <Wrapper flex={headerFlex ? headerFlex : 1.5} />
-                <Wrapper flex={footerFlex ? footerFlex : 8.5} style={[styles.swipableModalFooter]}>
+            <Wrappers.Primary flex={1}>
+                <Wrappers.Primary flex={headerFlex ? headerFlex : 1.5} />
+                <Wrappers.Primary flex={footerFlex ? footerFlex : 8.5} style={[styles.swipableModalFooter]}>
                     {children}
-                    <AbsoluteWrapper style={[styles.barContainer]}>
-                        <Wrapper style={[appStyles.center]}>
+                    <Wrappers.Absolute style={[styles.barContainer]}>
+                        <Wrappers.Primary style={[appStyles.center]}>
                             <TouchableOpacity onPress={toggleModal}>
-                                <LineHorizontal
+                                <Lines.Horizontal
                                     height={4}
                                     width={width(15)}
                                     style={{ borderRadius: 5 }}
                                     color={colors.appBgColor3}
                                 />
                             </TouchableOpacity>
-                            <Spacer height={sizes.baseMargin} />
-                            <TinyTitle>{title}</TinyTitle>
-                        </Wrapper>
-                    </AbsoluteWrapper>
-                    <AbsoluteWrapper style={[{ top: sizes.baseMargin * 1.5, left: sizes.marginHorizontal }]}>
-                        <CloseIcon
-                            onPress={toggleModal}
+                            <Spacers.Base  />
+                            <Texts.TinyTitle>{title}</Texts.TinyTitle>
+                        </Wrappers.Primary>
+                    </Wrappers.Absolute>
+                    <Wrappers.Absolute style={[{ top: sizes.baseMargin * 1.5, left: sizes.marginHorizontal }]}>
+                        <Icon
+                            name="close"
                         />
-                    </AbsoluteWrapper>
-                </Wrapper>
-            </Wrapper>
+                    </Wrappers.Absolute>
+                </Wrappers.Primary>
+            </Wrappers.Primary>
         </Modal>
     );
 }
 
 
-export const AddValueModal = ({ children, placeholder, title, value, onChangeText, isVisible, toggleModal, buttonText, onPressButton,autoFocus }) => {
-    return (
-        <Modal
-            isVisible={isVisible}
-            //swipeDirection="down"
-            //onSwipeComplete={toggleModal}
-            style={{ flex:1,margin: 0,justifyContent:'center' }}
-            onBackdropPress={toggleModal}
-            backdropOpacity={0.5}
-        >
-                <CardWrapper style={[styles.enterValueModalPrimaryCard]}>
-                    <TinyTitle >{title ? title : 'Title'}</TinyTitle>
-                    <Spacer height={sizes.baseMargin} />
-                    <TextInputBordered
-                        placeholder={placeholder}
-                        value={value}
-                        autoFocus={autoFocus}
-                        onChangeText={onChangeText}
-                        inputContainerStyle={{ marginHorizontal: 0 }}
-                    />
-                    <Spacer height={sizes.baseMargin} />
-                    <ButtonColored
-                        text={buttonText ? buttonText : 'ADD'}
-                        onPress={onPressButton}
-                        buttonStyle={{ marginHorizontal: 0 }}
-                    />
-                    {children}
-                </CardWrapper>
-        </Modal>
-    );
-}

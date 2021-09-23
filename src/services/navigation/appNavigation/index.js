@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { header, routes,headers} from '../../constants';
-import { Home } from '../../../screens/mainFlow';
+import * as App from '../../../screens/appFlow';
 
 const AppStack = createNativeStackNavigator();
 
@@ -9,9 +9,9 @@ const AppNavigation = () => {
     return (
         <AppStack.Navigator
             screenOptions={headers.screenOptions}
-            initialRouteName={routes.welcome}
+            initialRouteName={routes.home}
         >
-            <AppStack.Screen name={routes.signin} component={Home}
+            <AppStack.Screen name={routes.home} component={App.Home}
                 options={{
                     headerShown: false,
                     //title: 'Sign In'

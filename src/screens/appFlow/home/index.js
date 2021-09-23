@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+function Home () {
 
-  render() {
+
     return (
       <View>
         <Text> index </Text>
       </View>
     );
-  }
 }
 
 export default Home;

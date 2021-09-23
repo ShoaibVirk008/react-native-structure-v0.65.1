@@ -3,20 +3,14 @@ import { View, Text } from 'react-native';
 import { MainWrapper, RegularText, XXLTitle } from '../../../components';
 import { appStyles } from '../../../services';
 
-class Signin extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+function Signin(){
 
-  render() {
+
     return (
       <MainWrapper style={[appStyles.center]}>
         <XXLTitle>Signin</XXLTitle>
       </MainWrapper>
     );
-  }
 }
 
 export default Signin;

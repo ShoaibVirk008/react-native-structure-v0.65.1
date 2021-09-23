@@ -1,21 +1,28 @@
+import * as Spacers from './spacers'
+import * as Buttons from './buttons';
+import * as Texts from './texts';
+import * as Icons from './icons'
+import * as TextInputs from './textInput'
+import * as Logos from './logos'
+import * as Cards from './cards'
+import * as Lines from './lines'
+import * as Images from './images'
+import * as CheckBoxes from './checkBoxs'
+import * as ScrollViews from './scrollViews'
+import * as Loaders from './loaders'
+import * as Modals from './modals'
+import * as Toasts from './toasts'
+import * as Headers from './headers'
+import * as Pickers from './pickers'
+import * as Wrappers from './wrappers'
 
-export * from './buttons';
-export * from './text';
-export * from './icons'
-export * from './wrappers'
-export *from './spacers'
-export * from './textInput'
-export * from './logos'
-export * from './cards'
-export * from './lines'
-export * from './images'
-export * from './chatBubbles'
-export * from './checkBoxs'
-export * from './scrollViews'
-export * from './loaders'
-export * from './modals'
-export * from './toasts'
-export * from './headers'
-export * from './pickers'
 
+
+export {
+    Spacers, Buttons, Texts, Icons,
+    TextInputs, Logos, Cards, Lines, Images,
+    CheckBoxes, ScrollViews,Loaders,
+    Modals,Toasts,Headers,Pickers,
+    Wrappers
+}
 

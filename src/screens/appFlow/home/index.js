@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import { Texts, Wrappers } from '../../../components';
 
-function Home () {
+function Home() {
 
 
-    return (
-      <View>
-        <Text> index </Text>
-      </View>
-    );
+  return (
+    <Wrappers.MainWrapper>
+      <Texts.LargeTitle> Home </Texts.LargeTitle>
+    </Wrappers.MainWrapper>
+  );
 }
 
 export default Home;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { header, routes,headers} from '../../constants';
-import { Signin, Signup, } from '../../../screens/authFlow';
+import * as Auth from '../../../screens/authFlow';
 
 const AuthStack = createNativeStackNavigator();
 
@@ -11,13 +11,13 @@ const AuthNavigation = () => {
             screenOptions={headers.screenOptions}
             initialRouteName={routes.welcome}
         >
-            <AuthStack.Screen name={routes.signin} component={Signin}
+            <AuthStack.Screen name={routes.signin} component={Auth.Signin}
                 options={{
                     headerShown: false,
                     //title: 'Sign In'
                 }}
             />
-            <AuthStack.Screen name={routes.signup} component={Signup}
+            <AuthStack.Screen name={routes.signup} component={Auth.Signup}
                 options={{
                     headerShown: false,
                     //title: 'sign Up'

@@ -15,7 +15,7 @@ import {
     UIActivityIndicator,
     WaveIndicator,
 } from 'react-native-indicators';
-import { RegularText } from '../text';
+import { RegularText } from '../texts';
 import { Spacer } from '../spacers';
 
 

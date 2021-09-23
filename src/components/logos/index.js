@@ -6,7 +6,7 @@ import { colors, sizes, appStyles } from '../../services';
 import { IconWithText } from '../icons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5'
 import { RowWrapperBasic } from '../wrappers';
-import { TinyTitle } from '../text';
+import { TinyTitle } from '../texts';
 import { Spacer } from '../spacers';
 
 export const LogoMain = ({}) => {

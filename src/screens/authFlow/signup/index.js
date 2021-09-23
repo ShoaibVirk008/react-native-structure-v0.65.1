@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { MainWrapper, XXLTitle } from '../../../components';
-import { appStyles } from '../../../services';
+import { Wrappers, Texts, Spacers } from '../../../components';
+import { appStyles, routes } from '../../../services';
 
-function Signup() {
+function Signup(props) {
+  const {navigate,goBack}=props.navigation
 
   return (
-    <MainWrapper style={[appStyles.center]}>
-      <XXLTitle>Signup</XXLTitle>
-    </MainWrapper>
+    <Wrappers.MainWrapper style={[appStyles.center]}>
+      <Texts.XXLTitle>Signup</Texts.XXLTitle>
+      <Spacers.DoubleBase />
+      <Texts.RegularText onPress={()=>goBack()}>Go Back</Texts.RegularText>
+    </Wrappers.MainWrapper>
   );
 }
 

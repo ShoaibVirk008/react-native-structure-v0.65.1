@@ -2,7 +2,7 @@ import React from 'react'
 import { Wrapper, RowWrapper, ComponentWrapper, AbsoluteWrapper } from '../wrappers'
 import { appStyles, sizes } from '../../services'
 import { BackIcon } from '../icons'
-import { TinyTitle, MediumText } from '../text'
+import { TinyTitle, MediumText } from '../texts'
 
 
 

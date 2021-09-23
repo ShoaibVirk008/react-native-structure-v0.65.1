@@ -5,7 +5,7 @@ import { height, totalSize, width } from 'react-native-dimension';
 import { colors, fontSize, fontFamily, sizes, appIcons, appStyles } from '../../services';
 import RNPickerSelect from 'react-native-picker-select'
 import { AbsoluteWrapper, Wrapper, ComponentWrapper, RowWrapper } from '../wrappers';
-import { SmallText, InputTitle, MediumText, RegularText } from '../text';
+import { SmallText, InputTitle, MediumText, RegularText } from '../texts';
 import { CustomIcon, IconWithText } from '../icons';
 import { Spacer } from '../spacers';
 

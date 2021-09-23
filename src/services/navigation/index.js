@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -10,41 +10,34 @@ import { Splash } from '../../screens/authFlow';
 
 const MainStack = createNativeStackNavigator();
 
-export class Navigation extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            loading: true
-        };
-    }
-componentDidMount=()=>{
-    setTimeout(() => {
-        this.setState({loading:false})
-    }, 2500);
-}
-    render() {
-        const { loading } = this.state
+export function Navigation() {
+    const [loading, setLoading] = useState(true)
 
-        if (loading)
-            return <Splash />
-        else
-            return (
-                <NavigationContainer>
-                    <MainStack.Navigator
-                        screenOptions={{ headerShown: false }}
-                        initialRouteName={routes.auth}
-                    >
-                        <MainStack.Screen
-                            name={routes.auth}
-                            component={AuthNavigation}
-                        />
-                        <MainStack.Screen
-                            name={routes.app}
-                            component={AppNavigation}
-                        />
-                    </MainStack.Navigator>
-                </NavigationContainer>
-            );
-    }
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false)
+        }, 2500);
+    })
+
+    if (loading)
+        return <Splash />
+    else
+        return (
+            <NavigationContainer>
+                <MainStack.Navigator
+                    screenOptions={{ headerShown: false }}
+                    initialRouteName={routes.auth}
+                >
+                    <MainStack.Screen
+                        name={routes.auth}
+                        component={AuthNavigation}
+                    />
+                    <MainStack.Screen
+                        name={routes.app}
+                        component={AppNavigation}
+                    />
+                </MainStack.Navigator>
+            </NavigationContainer>
+        );
 }
 

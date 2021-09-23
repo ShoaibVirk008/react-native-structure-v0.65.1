@@ -5,7 +5,7 @@ import { height, totalSize, width } from 'react-native-dimension';
 import { colors, sizes, appStyles } from '../../services';
 import { CardWrapper, RowWrapper, ComponentWrapper, Wrapper, AbsoluteWrapper } from '../wrappers';
 import { Spacer } from '../spacers';
-import { TinyTitle, RegularText } from '../text';
+import { TinyTitle, RegularText } from '../texts';
 import { TextInputColored, TextInputBordered } from '../textInput';
 import Modal from 'react-native-modal'
 import { CheckBoxPrimary } from '../checkBoxs';

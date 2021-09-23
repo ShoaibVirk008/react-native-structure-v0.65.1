@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, sizes } from '../../services';
 import * as Animatable from 'react-native-animatable';
-import { SmallText } from '../text';
+import { SmallText } from '../texts';
 
 export const BackIcon = ({ style, onPress, size }) => {
     return (

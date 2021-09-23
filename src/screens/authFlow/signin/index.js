@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { MainWrapper, RegularText, XXLTitle } from '../../../components';
-import { appStyles } from '../../../services';
+import { Wrappers, Spacers, Texts } from '../../../components';
+import { appStyles, routes, sizes } from '../../../services';
 
-function Signin(){
+function Signin(props) {
+const {navigate}=props.navigation
 
-
-    return (
-      <MainWrapper style={[appStyles.center]}>
-        <XXLTitle>Signin</XXLTitle>
-      </MainWrapper>
-    );
+  return (
+    <Wrappers.MainWrapper style={[appStyles.center]}>
+      <Texts.XXLTitle>Signin</Texts.XXLTitle>
+      <Spacers.DoubleBase />
+      <Texts.RegularText onPress={()=>navigate(routes.signup)}>Go to Signup</Texts.RegularText>
+    </Wrappers.MainWrapper>
+  );
 }
 
 export default Signin;

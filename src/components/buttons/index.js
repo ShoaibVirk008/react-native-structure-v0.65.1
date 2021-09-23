@@ -3,8 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator } fr
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
 import { colors, appStyles, fontSize, sizes } from '../../services';
-import { ButtonTextRegular, ButtonTextMedium } from '../text';
-import { color } from 'react-native-reanimated';
+import { ButtonTextRegular, ButtonTextMedium } from '../texts';
 import { CustomIcon } from '../icons';
 import { Wrapper, RowWrapperBasic, RowWrapper, ComponentWrapper } from '../wrappers';
 

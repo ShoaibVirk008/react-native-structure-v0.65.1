@@ -1,19 +1,20 @@
 import { Dimensions, Platform, StatusBar } from 'react-native'
 import { totalSize } from 'react-native-dimension'
+import DeviceInfo from 'react-native-device-info';
 
 const { width, height } = Dimensions.get('window')
 
 const statusBarHeight = Platform.select({
-  ios: 22,
+  ios: DeviceInfo.hasNotch()?40:23,
   android: StatusBar.currentHeight
 })
 const headerHeight = Platform.select({
-  ios: height*0.08,
-  android: height*0.1
+  ios: height * 0.12,
+  android: height * 0.12
 })
-const tabBarHeight= Platform.select({
-  ios: height*0.07,
-  android: height*0.07
+const tabBarHeight = Platform.select({
+  ios:DeviceInfo.hasNotch()? height * 0.1:height * 0.09,
+  android: height * 0.09
 })
 
 // Used via Metrics.baseMargin

@@ -1,5 +1,5 @@
 import React from 'react'
-import { appStyles, colors } from "../../services"
+import { appStyles, colors } from "../../services/utilities"
 import { BackIcon } from "../../components"
 
 

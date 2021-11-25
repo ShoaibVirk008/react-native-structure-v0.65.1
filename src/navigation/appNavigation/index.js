@@ -8,13 +8,14 @@ const AppStack = createNativeStackNavigator();
 const AppNavigation = () => {
     return (
         <AppStack.Navigator
-            screenOptions={headers.screenOptions}
+       // screenOptions={headers.screenOptions}
+        screenOptions={headers.screenOptions}
             initialRouteName={routes.home}
         >
             <AppStack.Screen name={routes.home} component={App.Home}
                 options={{
                     headerShown: false,
-                    //title: 'Sign In'
+                    //title: 'Home'
                 }}
             />
         </AppStack.Navigator>

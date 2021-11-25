@@ -2,17 +2,23 @@ import React from 'react'
 import { View, Text, Image, StyleSheet, TouchableOpacity, ActivityIndicator, TextInput } from 'react-native'
 import { Icon } from 'react-native-elements';
 import { height, totalSize, width } from 'react-native-dimension';
-import { colors, appStyles } from '../../services';
-const Colored = ({iconName, iconType, placeholder, onFocus, onBlur, onChangeText, secureTextEntry, value, containerStyle}) => {
+import { colors, appStyles, sizes } from '../../services';
+const Colored = ({ iconName, iconType, placeholder, onFocus, onBlur, onChangeText, secureTextEntry, value, containerStyle }) => {
     return (
         <View style={[appStyles.inputContainerColored, {
-            borderRadius: 10,
+            borderRadius: sizes.inputRadius,
             backgroundColor: colors.appBgColor2
         }, appStyles.shadow, containerStyle]}>
-            <View style={{ flex: 2, alignItems: 'center' }}>
-                <Icon name={iconName} type={iconType} size={totalSize(2.5)} color={colors.appTextColor5} iconStyle={{}} />
-            </View>
-            <View style={{ flex: 8 }}>
+            {
+                iconName ?
+                    <View style={{ marginLeft:sizes.marginHorizontal/2 }}>
+                        <Icon name={iconName} type={iconType} size={totalSize(2.5)} color={colors.appTextColor5} iconStyle={{}} />
+                    </View>
+                    :
+                    null
+            }
+
+            <View style={{ flex: 1 }}>
                 <TextInput
                     onChangeText={onChangeText}
                     value={value}
@@ -20,23 +26,28 @@ const Colored = ({iconName, iconType, placeholder, onFocus, onBlur, onChangeText
                     onFocus={onFocus}
                     onBlur={onBlur}
                     secureTextEntry={secureTextEntry}
-                    style={[appStyles.inputField, { width: null, height: height(7) }]}
+                    style={[appStyles.inputField, { width: null, height: height(7),paddingHorizontal:sizes.marginHorizontal/2 }]}
                 />
             </View>
         </View>
     );
 }
-const Bordered = ({iconName, iconType, placeholder, placeholderTextColor, onFocus, onChangeText, secureTextEntry, value, containerStyle, inputStyle}) => {
+const Bordered = ({ iconName, iconType, placeholder, placeholderTextColor, onFocus, onChangeText, secureTextEntry, value, containerStyle, inputStyle }) => {
     return (
         <View style={[appStyles.inputContainerBorderd, {
-            borderRadius: 5,
+            borderRadius: sizes.inputRadius,
             borderWidth: 1,
-            borderColor: colors.appColor1 
+            borderColor: colors.appColor1
         }, containerStyle]}>
-            <View style={{ flex: 2, alignItems: 'center' }}>
-                <Icon name={iconName} type={iconType} size={totalSize(2.5)} color={ colors.appColor1 } iconStyle={{}} />
-            </View>
-            <View style={{ flex: 8 }}>
+            {
+                iconName ?
+                <View style={{ marginLeft:sizes.marginHorizontal/2 }}>
+                        <Icon name={iconName} type={iconType} size={totalSize(2.5)} color={colors.appColor1} iconStyle={{}} />
+                    </View>
+                    :
+                    null
+            }
+            <View style={{ flex: 1 }}>
                 <TextInput
                     onChangeText={onChangeText}
                     value={value}
@@ -44,7 +55,7 @@ const Bordered = ({iconName, iconType, placeholder, placeholderTextColor, onFocu
                     onFocus={onFocus}
                     placeholderTextColor={placeholderTextColor}
                     secureTextEntry={secureTextEntry}
-                    style={[appStyles.inputField, { width: null, height: height(6) }, inputStyle]}
+                    style={[appStyles.inputField, { width: null, height: height(7),paddingHorizontal:sizes.marginHorizontal/2 }, inputStyle]}
                 />
             </View>
         </View>

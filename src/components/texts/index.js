@@ -3,141 +3,143 @@ import { StyleSheet, Text } from 'react-native'
 import { appStyles, colors, fontFamily, sizes, appIcons } from '../../services';
 
 // Title Texts
-export const XXLTitle = ({style,onPress,children}) => {
+export const XXLTitle = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.xxlTitleStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const XLTitle = ({style,onPress,children}) => {
+export const XLTitle = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.xlTitleStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const LargeTitle = ({style,onPress,children}) => {
+export const LargeTitle = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.largeTitleStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const MediumTitle = ({style,onPress,children}) => {
+export const MediumTitle = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.mediumTitleStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const SmallTitle = ({style,onPress,children}) => {
+export const SmallTitle = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.smallTitleStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const TinyTitle = ({style,onPress,children}) => {
+export const TinyTitle = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.tinyTitleStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
 // Normal Texts
-export const LargeText = ({style,onPress,children}) => {
+export const Large = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.largeTextStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const Medium = ({style,onPress,children}) => {
+export const Medium = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.mediumTextStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const Regular = ({style,onPress,children,numberOfLines}) => {
+export const Regular = ({ style, children, ...props }) => {
     return (
         <Text
-            numberOfLines={numberOfLines}
             style={[styles.regularTextStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const Small = ({style,onPress,children}) => {
+export const Small = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.smallTextStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const Tiny = ({style,onPress,children}) => {
+export const Tiny = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.tinyTextStyle, style]}
-            onPress={onPress}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const Input = ({style,children}) => {
+export const Input = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.inputTitleStyle, style]}
+            {...props}
         >
             {children}
         </Text>
     );
 }
 
-export const ButtonRegular = ({style,children}) => {
+export const ButtonRegular = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.ButtonTextRegularStyle, style]}
+            {...props}
         >
             {children}
         </Text>
     );
 }
-export const ButtonMedium = ({style,children}) => {
+export const ButtonMedium = ({ style, children, ...props }) => {
     return (
         <Text
             style={[styles.ButtonTextMediumStyle, style]}
+            {...props}
         >
             {children}
         </Text>
@@ -166,7 +168,6 @@ const styles = StyleSheet.create({
     },
     tinyTitleStyle: {
         ...appStyles.h6,
-        fontFamily: fontFamily.appTextBold
     },
     largeTextStyle: {
         ...appStyles.textLarge
@@ -185,15 +186,12 @@ const styles = StyleSheet.create({
     },
     inputTitleStyle: {
         ...appStyles.textTiny,
-        //color: colors.appColor1
     },
     ButtonTextRegularStyle: {
         ...appStyles.ButtonRegular,
-        //color: colors.appColor1
     },
-    ButtonTextMediumStyle:{
+    ButtonTextMediumStyle: {
         ...appStyles.ButtonMedium,
-        //color: colors.appColor1
     },
 
 });

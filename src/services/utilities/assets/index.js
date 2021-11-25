@@ -4,7 +4,7 @@ const appImages = {
 }
 
 const appIcons = {
-
+    security:require('../../../assets/icons/security.png')
 }
 
 const appSvgs = {

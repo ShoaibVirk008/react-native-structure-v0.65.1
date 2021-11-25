@@ -1,5 +1,4 @@
-import android.os.Bundle;
-package com.rn64;
+package com.rn65;
 
 import com.facebook.react.ReactActivity;
 
@@ -11,10 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "RN64";
+    return "RN65";
   }
-  @Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(null);
-}
 }

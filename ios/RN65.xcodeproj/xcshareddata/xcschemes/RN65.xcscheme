@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "RN64.app"
-               BlueprintName = "RN64"
-               ReferencedContainer = "container:RN64.xcodeproj">
+               BuildableName = "RN65.app"
+               BlueprintName = "RN65"
+               ReferencedContainer = "container:RN65.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "RN64Tests.xctest"
-               BlueprintName = "RN64Tests"
-               ReferencedContainer = "container:RN64.xcodeproj">
+               BuildableName = "RN65Tests.xctest"
+               BlueprintName = "RN65Tests"
+               ReferencedContainer = "container:RN65.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RN64.app"
-            BlueprintName = "RN64"
-            ReferencedContainer = "container:RN64.xcodeproj">
+            BuildableName = "RN65.app"
+            BlueprintName = "RN65"
+            ReferencedContainer = "container:RN65.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RN64.app"
-            BlueprintName = "RN64"
-            ReferencedContainer = "container:RN64.xcodeproj">
+            BuildableName = "RN65.app"
+            BlueprintName = "RN65"
+            ReferencedContainer = "container:RN65.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

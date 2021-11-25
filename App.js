@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
-import { appStyles, Navigation } from './src/services';
-import { MainWrapper, ButtonColored, ButtonBordered, RowWrapper, ButtonColoredSmall, ButtonBorderedSmall } from './src/components';
-
+import Navigation from './src/navigation'
 class App extends Component {
   constructor(props) {
     super(props);

@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '11.0'
 
-target 'RN64' do
+target 'RN65' do
   config = use_native_modules!
 
   use_react_native!(
@@ -12,9 +12,7 @@ target 'RN64' do
     :hermes_enabled => false
   )
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-
-  target 'RN64Tests' do
+  target 'RN65Tests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,7 +21,7 @@ target 'RN64' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!()
+  # use_flipper!()
 
   post_install do |installer|
     react_native_post_install(installer)

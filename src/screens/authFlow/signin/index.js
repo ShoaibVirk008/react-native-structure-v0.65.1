@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { totalSize } from 'react-native-dimension';
-import { Wrappers, Spacers, Texts, Loaders, Logos, Toasts, Icons, TextInputs, Buttons, ScrollViews } from '../../../components';
-import { appStyles, routes, sizes } from '../../../services';
+import { Wrappers, Spacers, Logos, Toasts, Icons, TextInputs, Buttons, ScrollViews } from '../../../components';
+import { appStyles, routes, } from '../../../services';
 
 function Signin(props) {
   const { navigate } = props.navigation
   Toasts.Success('Success')
   return (
-    <Wrappers.Main style={[{ justifyContent: 'center', }]}>
+    <Wrappers.Main style={[{ }]}>
       <ScrollViews.KeyboardAvoiding>
         <Spacers.Base />
         <Wrappers.Primary style={[appStyles.center]}>
